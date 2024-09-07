@@ -1,0 +1,35 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ddd;
+    line-height: 1.65;
+    padding-bottom: 1000px;
+}
+
+.container-satu{
+    width: 800px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+    /* Menggunakan grid */
+    display: grid;
+    grid-template-areas: "sidebar-satu kolom-utama sidebar-dua";
+    grid-template-columns: 1fr 2fr 1fr; 
+}
+
+.kolomm-utama{
+    grid-area: kolom-utama;
+}
+
+.sidebar-satu{
+    grid-area: sidebar-satu;
+}
+
+.sidebar-dua{
+    grid-area: sidebar-dua;
+}
