@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="tugas_p3_css.css">
+    <title>Tugas P3 - Muhammad Syafiq Aldiansyah</title>
+    <style>
+        .namaKu {
+            text-align: center;
+            color: red;
+        }
+
+        form {
+            max-width: max-content;
+            margin: 50px auto;
+        }
+
+        label {
+            color: red;
+        }
+
+        div {
+            margin-bottom: 10px;
+        }
+
+        .baris .kiri .baris::after {
+            display: table;
+            clear: both;
+        }
+
+        .kiri {
+            float: left;
+            width: 150px;
+            margin-right: 150px;
+        }
+
+        .kanan {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 class="namaKu">Muhammad Syafiq Aldiansyah</h2>
+    <form>
+        <div class="baris">
+            <div class="kiri">
+                <label for="nama">Nama</label>
+            </div>
+            <div class="kanan">
+                <input id="name" type="text" style="width: 200px;">
+            </div>
+        </div>
+        <div class="baris">
+            <div class="kiri">
+                <label for="alamat">Alamat</label>
+            </div>
+            <div class="kanan">
+                <textarea id="alamat" style="height: 300px; width: 300px;"></textarea>
+            </div>
+        </div>
+        <div class="baris">
+            <div class="kiri">
+                <label for="tgllahir">Tanggal Lahir</label>
+            </div>
+            <div>
+                <input id="tgllahir" type="date" style="width: 200px;">
+            </div>
+        </div>
+
+        <!-- Radio -->
+        <div class="baris">
+            <div class="kiri">
+                <label for="jkl">Jenis Kelamin</label>
+            </div>
+            <div class="kanan">
+                <div>
+                    <input name="jkl" id="radiolaki" type="radio" value="lakilaki">
+                    <label for="radiolaki">Laki-Laki</label>
+                </div>
+                <div>
+                    <input name="jkl" id="radiowanita" type="radio" value="wanita">
+                    <label for="radiowanita">Wanita</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="baris">
+            <div class="kiri">
+                <label for="hobby">Hobby</label>
+            </div>
+            <div class="checkbox">
+                <input id="berenang" name="hobby" type="checkbox" value="berenang">
+                <label for="berenang">Berenang</label>
+                <input id="berlari" name="hobby" type="checkbox" value="berlari">
+                <label for="berlari">Berlari</label>
+                <input id="lain-lain" name="hobby" type="checkbox" value="lain-lain">
+                <label for="lain-lain">Lain-lain</label>
+            </div>
+        </div>
+
+        <div class="baris">
+            <div class="kiri">
+                <label for="pekerjaan">Pekerjaan</label>
+            </div>
+            <div class="checkbox">
+                <input id="pekerjaan" type="checkbox" value="swasta" name="pekerjaan">
+                <label for="pekerjaan">Swasta</label>
+                <input id="pekerjaan" type="checkbox" value="pns" name="pekerjaan">
+                <label for="pekerjaan">PNS</label>
+                <input id="pekerjaan" type="checkbox" value="lainlain" name="pekerjaan">
+                <label for="pekerjaan">Lain-lain</label>
+            </div>
+        </div>
+
+        <div>
+            <input id="persetujuan" type="checkbox" value="setuju">
+            <label for="persetujuan">Check jika anda akan mengirimkan data ini</label>
+        </div>
+
+        <div>
+            <input type="submit" id="cek" value="Cek!">
+        </div>
+    </form>
+
+    <script>
+        const kirim = document.getElementById('cek');
+        kirim.addEventListener('click', (event) => {
+            event.preventDefault();
+
+            const nama = document.getElementById('name').value;
+            const alamat = document.getElementById('alamat').value;
+            const tgllahir = document.getElementById('tgllahir').value;
+            const jenisKelamin = document.querySelector('input[name="jkl"]:checked');
+            const hobbies = Array.from(document.querySelectorAll('input[name="hobby"]:checked')).map(checkbox => checkbox.value);
+            const pekerjaan = document.querySelectorAll('input[name="pekerjaan"]:checked');
+            const persetujuan = document.getElementById('persetujuan').checked;
+
+            let isValid = true;
+            if (nama == '') {
+                alert('Nama harus diisi');
+                isValid = false;
+            } else if (alamat == '') {
+                alert('Alamat harus diisi');
+                isValid = false;
+            } else if (tgllahir == '') {
+                alert('Tanggal Lahir harus diisi');
+                isValid = false;
+            } else if (jenisKelamin == null) {
+                alert('Jenis Kelamin harus dipilih');
+                isValid = false;
+            } else if (hobbies.length === 0) {
+                alert('Pilih satu hobby');
+                isValid = false;
+            } else if (pekerjaan.length === 0) {
+                alert('Pekerjaan harus dipilih');
+                isValid = false;
+            } else if (persetujuan == '') {
+                alert('Anda harus menyetujui pengiriman data');
+                isValid = false;
+            }
+
+            if (isValid) {
+                alert('Data berhasil dikirim');
+            }
+        });     </script>
+</body>
+
+</html>
