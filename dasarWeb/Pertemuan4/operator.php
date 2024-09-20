@@ -57,4 +57,12 @@ $a /= $b;
 echo "Hasil A /= B = $a <br>";
 $a %= $b;
 echo "Hasil A %= B = $a <br>";
+
+echo("<br><br>");
+
+$hasilIdentik = $a === $b;
+$hasilTidakIdentik = $a !== $b;
+
+echo "Hasil Identik = $hasilIdentik <br>";
+echo "Hasil Tidak Identik = $hasilTidakIdentik <br>";
 ?>
