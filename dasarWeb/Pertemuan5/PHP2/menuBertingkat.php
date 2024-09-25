@@ -37,6 +37,10 @@
         echo "<ul>";
         foreach($menu as $key => $item) {
             echo "<li>{$item['nama']}</li>";
+            //Kondisi jika terdapat subMenu
+            if(isset($item['subMenu'])) {
+                tampilkanMenuBertingkat($item['subMenu']);
+            }
         }
         echo "</ul>";
     }
