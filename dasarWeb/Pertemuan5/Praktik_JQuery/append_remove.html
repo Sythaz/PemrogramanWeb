@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="styleTable.css">
+        <script src="jquery-3.7.1.js"></script>
+        <script>
+            $(document).ready(function(){
+                $(".add-row").click(function(){
+                    var name = $("#name").val(); // Mengambil value dari input
+                    var email = $("#email").val();
+                    // Menggabungkan value kedalam kode html
+                    var markup = "<tr><td><input type='checkbox' name='record'></td><td>"
+                        + name + "</td><td>" + email + "</td></tr>";
+                    $("table tbody").append(markup);
+                });
+                
+                $(".delete-row").click(function() {
+                    // Didalam tag tbody dari table dicari tag input dengan name record
+                    $("table tbody").find('input[name="record"]').each(function() {
+                        // Jika tiap tag input tersebut bernilai true/checked
+                        if($(this).is(":checked")) {
+                            // Akan menghapus parent "tr" dari tag input itu sendiri
+                            $(this).parents("tr").remove();
+                        }
+                    })
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <form>
+            <input type="text" id="name" placeholder="Name">
+            <input type="text" id="email" placeholder="Email Address">
+            <input type="button" class="add-row" value="Add Row">
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>Select</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="checkbox" name="record"></td>
+                    <td>Tony Stark</td>
+                    <td>tonystark@mail.com</td>
+                </tr>
+            </tbody>
+        </table>
+        <button type="button" class="delete-row">Delete Row</button>
+    </body>
+</html>
