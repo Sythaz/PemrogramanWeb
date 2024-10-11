@@ -1,5 +1,5 @@
 <?php
-$pattern = '/go*d/';
+$pattern = '/go?d/';
 $replacement = 'banana';
 $text = 'god is good';
 // $new_text = preg_replace($pattern, $replacement, $text);
