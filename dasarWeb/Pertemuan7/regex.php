@@ -1,7 +1,7 @@
 <?php
-$pattern = '/go?d/';
+$pattern = '/go{1,3}d/';
 $replacement = 'banana';
-$text = 'god is good';
+$text = 'is good';
 // $new_text = preg_replace($pattern, $replacement, $text);
 // echo $new_text; // Output: "I like banana pie."
 
