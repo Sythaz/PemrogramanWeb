@@ -1,15 +1,15 @@
 <?php
-$pattern = '/apple/';
+$pattern = '/go*d/';
 $replacement = 'banana';
-$text = 'I like apple pie.';
-$new_text = preg_replace($pattern, $replacement, $text);
-echo $new_text; // Output: "I like banana pie."
+$text = 'god is good';
+// $new_text = preg_replace($pattern, $replacement, $text);
+// echo $new_text; // Output: "I like banana pie."
 
-echo "<br>";
+// echo "<br>";
 
 if (preg_match($pattern, $text, $matches)) {
     echo "Cocokkan: " . $matches[0];
 } else {
-    echo "Huruf kecil tidak ditemukan!";
+    echo "Tidak ada yang coock!";
 }
 ?>
