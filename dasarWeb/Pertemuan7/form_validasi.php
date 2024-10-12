@@ -40,6 +40,17 @@
                     if (!valid) {
                         event.preventDefault()
                     }
+
+                    event.preventDefault()
+                    var formData = $("#myForm").serialize()
+                    $.ajax({
+                        url: "form_validasi.php",
+                        type: "POST",
+                        data:formData,
+                        success:function(response){
+                            $("#hasil").html(response)
+                        }
+                    })  
                     
                 })
             })
