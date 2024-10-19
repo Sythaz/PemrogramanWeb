@@ -1,20 +1,32 @@
 <?php
 if (isset(($_FILES['file']))) { // formData dari ajax ditangkap oleh $_FILES
     $errors = array();
-    $totalFiles = count($_FILES['file']['name']); // Menghitung total inputan
+    if (is_array($_FILES['file']['name'])) {
+        $totalFiles = count($_FILES['file']['name']); // Menghitung total inputan
+    } else { // Karena terdapat error jika inputan hanya 1
+        $totalFiles = 1;
+    }
 
     for ($i=0; $i < $totalFiles; $i++) { 
-        $file_name = $_FILES['file']['name'][$i];
-        $file_size = $_FILES['file']['size'][$i];
-        $file_tmp = $_FILES['file']['tmp_name'][$i];
-        $file_type = $_FILES['file']['type'][$i];
-        @$file_ext = strtolower("" . end(explode('.', $_FILES['file']['name'][$i])) . "");
-        
-        $extensions = array("png", "jpeg", "jpg", "gif");
-    
-        if(in_array($file_ext, $extensions) === false) {
-            $errors[] = "Ekstensi file yang diizinkan adalah PDF, DOC, DOCX, atau TXT.";
+        if ($totalFiles > 1) {
+            $file_name = $_FILES['file']['name'][$i];
+            $file_size = $_FILES['file']['size'][$i];
+            $file_tmp = $_FILES['file']['tmp_name'][$i];
+            // $file_type = $_FILES['file']['type'][$i];
+            @$file_ext = strtolower("" . end(explode('.', $_FILES['file']['name'][$i])) . "");
+            
+        } else {
+            $file_name = $_FILES['file']['name'];
+            $file_size = $_FILES['file']['size'];
+            $file_tmp = $_FILES['file']['tmp_name'];
+            // $file_type = $_FILES['file']['type'][$i];
+            @$file_ext = strtolower("" . end(explode('.', $_FILES['file']['name'])) . "");
         }
+        // Tanpa cek ekstension
+        // $extensions = array("png", "jpeg", "jpg", "gif");
+        // if(in_array($file_ext, $extensions) === false) {
+        //     $errors[] = "Ekstensi file yang diizinkan adalah PDF, DOC, DOCX, atau TXT.";
+        // }
     
         if ($file_size > 2097152) {
             $errors[] = 'Ukuran file tidak boleh lebih dari 2 MB';
