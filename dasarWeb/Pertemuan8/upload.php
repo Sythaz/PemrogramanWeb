@@ -9,6 +9,7 @@ if (isset($_POST['submit'])) {
     if (in_array($fileType, $allowedExtensions) && $_FILES['myfile']['size'] <= $maxsize) {
         if (move_uploaded_file($_FILES['myfile']['tmp_name'], $targetfile)) { // Fungsi ini return bool
             echo 'File berhasil diunggah <br>';
+            
         } else {
             echo 'Gagal mengunggah file';
         }
