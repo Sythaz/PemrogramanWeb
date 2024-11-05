@@ -1,0 +1,107 @@
+* {
+    /* Reset ulang style margin padding default */
+    padding: 0;
+    margin: 0;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    /* Menengahkan isi dari body*/
+    display: flex; /* Wajib untuk menengahkan menggunakan align dan justify */
+    align-items: center; /* Vertikal */
+    justify-content: center; /* Horizontal */
+
+    background-image: url(../UTS/background.jpg);
+    background-size: cover;
+}
+
+/* GRID 1 */
+
+.kotak-form {
+    border-radius: 20px;
+    /* Membagi dua bagian menggunakan grid */
+    display: grid;
+    grid-template-columns: 50% 50%;
+
+    background-color: #010a07;
+    min-width: 90%; /* Karena konten kedua grid tidak terlalu besar, dibutuhkan minimal */ 
+    aspect-ratio: 16/9; /* Mengatur lebar gambar yang overflow*/
+
+    max-height: 90%; /*  Mengatur tinggi maksimal dari 100% ke 90% */
+}
+
+.gambar-form {
+    padding: 20px;
+    overflow: hidden; /* Menghindari overflow pada gambar */
+}
+
+.gambar-form img{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    object-fit: cover; /* Agar gambar tidak penyet */
+}
+
+/* GRID 2 */
+
+.grid-2 {
+    padding: 40px;
+}
+
+.header-text {
+    text-align: center;
+    padding-bottom: 20px;
+    font-weight: bold;
+    font-size: 32px;
+}
+
+.margin-t15 {
+    margin-top: 15px;
+}
+
+.padding-b15 {
+    padding-bottom: 15px;
+}
+
+.padding-b25 {
+    padding-bottom: 25px;
+}
+
+label {
+    margin-bottom: 10px;
+}
+
+.form {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #051512;
+    border-radius: 6px;
+
+    width: 100%;
+    height: 50px;
+    
+    padding: 20px;
+    border-style: none; /* Menghilangkan border pada input email dan pass */
+}
+
+.tombol-submit {
+    width: 100%;
+    height: 40px;
+
+    border-style: none;
+    border-radius: 6px;
+
+    background-color: #235343;
+    font-weight: 600;
+    cursor: pointer; /* Membuat kursor menjadi klikable */
+}
+
+label {
+    font-size: 14px;
+    font-weight: 600;
+    /* display: block; */
+}
+
+input:focus { /* Menghilangkan border email dan pass saat di klik */
+    outline: none;
+}

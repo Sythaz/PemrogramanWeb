@@ -1,0 +1,158 @@
+* {
+    /* Reset ulang style margin padding default */
+    padding: 0;
+    margin: 0;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    /* Menengahkan isi dari body*/
+    display: flex; /* Wajib untuk menengahkan menggunakan align dan justify */
+    flex-direction: column;
+    height: auto;
+
+    background-color: #1f1f1f;
+}
+
+.header-logout {
+    display: flex;
+    grid-template-columns: 3fr 1fr;
+    /* Membuat div didalamnya berada di samping kanan kiri */
+    justify-content: space-between;
+}
+
+
+.selamat-datang {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 0px 20px 30px 20px;
+}
+
+.tombol-logout {
+    margin-top: 20px;
+}
+
+.tombol-submit-logout {
+    text-decoration: none;
+    padding: 10px;
+    font-weight: bold;
+    margin: 30px 20px 30px 30px;
+    background-color: #235343;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.posisi-tombol-tambah {
+    display: flex;
+    justify-content: end;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.tambah-pohon-form {
+    display: flex;
+    background-color: #292929;
+    padding: 10px;
+    align-self: center;
+    border-radius: 6px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.tambah-pohon-form input {
+    flex: 1;
+    margin: 0px 10px;
+    text-indent: 10px;
+    height: 40px;
+    border-radius: 5px;
+    border-width: 0;
+    background-color: #1f1f1f;
+}
+
+.tombol-tambah {
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    height: 25px;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    cursor: pointer;
+}
+
+.tombol-tambah div {
+    margin-left: 5px;
+    margin-right: 5px;
+    font-weight: bold;
+    align-self: center;
+}
+
+.tombol-tambah svg {
+    margin-left: 5px;
+    margin-right: 5px;
+    
+}
+
+.kotak-tabel {
+    margin: 0px 20px;
+}
+
+.tabel-judul {
+    padding: 10px 0px;
+    display: grid;
+    grid-template-columns: 0.2fr 0.2fr 1fr 1fr 0.5fr 0.3fr;
+    text-align: start;
+    font-weight: bold;
+    border-bottom: #353535;
+    border-bottom-style: solid;
+    border-width: 1px;
+}
+
+.tabel-isi {
+    display: grid;
+    grid-template-columns: 0.2fr 0.2fr 1fr 1fr 0.5fr 0.3fr;
+    text-align: start;
+    border-bottom: #353535;
+    border-bottom-style: solid;
+    border-width: 1px;
+}
+
+.tabel-isi-item {
+    padding: 10px 0px;
+    align-self: center;
+}
+
+.tabel-isi-item input {
+    height: 30px;
+    border-radius: 5px;
+    border-width: 0;
+    text-indent: 0;
+    width: 90%;
+    background-color: #1f1f1f;
+}
+
+input:focus {
+    outline: 2px solid #353535;
+}
+
+.container-tombol-filter {
+    align-items: center;
+    margin: 20px;
+}
+
+.filter-margin {
+    /* margin-right: 10px; */
+}
+
+.tombol-filter {
+    padding: 8px 16px;
+    border: 2px solid #235343;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #1f1f1f;
+    font-weight: 600;
+}
+
+.tombol-filter.active {
+    background-color: #235343;
+}
